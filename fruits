@@ -1,0 +1,20 @@
+// 과일들을 입력받는 코드입니다. 수정하지 마세요!
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+var fruits = []
+
+rl.on("line", function (line) {
+  fruits = line.split(' ');
+  rl.close();
+}).on("close", function () {
+  fruits = fruits.filter((element) => element !== '콩');
+  fruits = fruits.filter((element) => element !== '무');
+  
+  // 과일이 아닌 것을 잘 제거했는지 확인해봅시다.
+  console.log(fruits)
+});
